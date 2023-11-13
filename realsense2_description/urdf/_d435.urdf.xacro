@@ -25,6 +25,7 @@ aluminum peripherial evaluation case.
   <!-- Includes -->
   <xacro:include filename="$(find realsense2_description)/urdf/_materials.urdf.xacro" />
   <xacro:include filename="$(find realsense2_description)/urdf/_usb_plug.urdf.xacro" />
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.gazebo.xacro"/>
 
   <xacro:macro name="sensor_d435" params="parent *origin name:=camera use_nominal_extrinsics:=false add_plug:=false use_mesh:=true">
     <xacro:property name="M_PI" value="3.1415926535897931" />
@@ -162,6 +163,15 @@ aluminum peripherial evaluation case.
       </joint>
       <link name="${name}_color_optical_frame"/>
     </xacro:if>
+
+    <xacro:gazebo_d435 camera_name="${name}" 
+      reference_link="${name}_link" 
+      topics_ns="plugin_name" 
+      depth_optical_frame="${name}_depth_optical_frame" 
+      color_optical_frame="${name}_color_optical_frame" 
+      infrared1_optical_frame="${name}_infra1_optical_frame" 
+      infrared2_optical_frame="${name}_infra2_optical_frame"/>
+
 
     <xacro:if value="${add_plug}">
       <xacro:usb_plug parent="${name}_link" name="${name}_usb_plug">
