@@ -1,3 +1,11 @@
+# About this fork
+
+This fork is only for simulation in Gazebo. 
+
+It is used with [realsense_gazebo_plugin](https://github.com/pal-robotics/realsense_gazebo_plugin/tree/foxy-devel)
+
+Package `realsense2_camera` is removed here for light usage. 
+
 <h1 align="center">
    <img src="https://www.intelrealsense.com/wp-content/uploads/2020/09/intel-realsense-logo-360px.png" alt="Intel® RealSense™" title="Intel® RealSense™" />
 </h1>
